@@ -18,8 +18,22 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void bubbleSort(int* numbers, int n){
-
-}
+	int i, j, tmp;	/*Se colocan los contadores i y j para recorrer el arreglo. 
+					Además de una variable temporal tmp para guardar el valor
+					de la posición que sea más grande al valor actual*/
+	for(i = 0;i < n; i++){	/*Ciclos que recorran al arreglo totalmente*/
+		for (j = 0; j < n; j++){
+			if(numbers[j] > numbers[j+1]){	/*Comparamos si el número en la posición actual
+											es mayor al valor que está a su derecha*/
+				tmp  = numbers[j];			/*Guardamos el valor que es mayor en tmp*/
+				numbers[j] = numbers[j+1];	/*Asignamos el valor mas pequeño de la comparación
+											en la posición donde estaba el mayor */
+				numbers[j+1] = tmp;			/*Colocamos el valor mas grande de la comparación
+											en la posicion donde estaba el menor*/
+			}/*cierra condición*/
+		}/*cierra ciclo de j*/
+	}/*cierra ciclo de i*/
+}/*cierra metodo de bubbleSort*/
 
 /*
 Nombre:			bubbleSortOptimized
@@ -31,7 +45,7 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void bubbleSortOptimized(int* numbers, int n){
-
+	
 }
 
 
@@ -56,7 +70,7 @@ void insertionSort(int* numbers, int n){
 			numbers[pos] = numbers[pos - 1];
 			pos--;
 		}
-		numbers[pos] = tmp;
+		numbers[pos] = tmp; /*Asignamos el valor de tmp en el indice 'pos'*/
 	}
 }
 
