@@ -18,3 +18,10 @@ int* readNumbers(int n){
 
 	return numbers;
 }
+
+void printSorting(int* numbers, int n){
+	int k;
+	for(k=0;k < n; k++){
+		printf("%d - ",numbers[k]);
+	}
+}

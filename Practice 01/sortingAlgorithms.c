@@ -44,7 +44,20 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void insertionSort(int* numbers, int n){
+	int i = 0, pos, tmp;		/*Auxiliar para recorrer el arreglo*/
+	for(i; i < n; i++){
+		pos = i;				/*Nos ubicamos en la posición actual*/
+		tmp = numbers[i];		/*Guardamos el valor de la posición actual*/
 
+		while((pos > 0) && (numbers[pos - 1] > tmp)){
+			 /*Si el elemento a la izquierda del número actual es mayor
+			 al número actual, vamos haciendo la inserción para mantenerlos
+			 ordenados de menor a mayor*/
+			numbers[pos] = numbers[pos - 1];
+			pos--;
+		}
+		numbers[pos] = tmp;
+	}
 }
 
 /*
@@ -81,5 +94,5 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void shellSort(int* numbers, int n){
-
+	
 }

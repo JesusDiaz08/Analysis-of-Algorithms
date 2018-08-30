@@ -5,3 +5,4 @@
 */
 
 int* readNumbers(int n);
+void printSorting(int* numbers);
