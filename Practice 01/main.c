@@ -1,12 +1,28 @@
+/*
+Equipo:		- Díaz Medina Jesús Kaimorts.
+			- Herrera Ramírez Absalom.
+			- Ferrer Daniela.
+
+Materia:	Análisis de Algoritmos.
+Fecha:		30 de Agosto del 2018.
+Practica:	01.
+Grupo:		3CM2.
+Tema:		Algoritmos de ordenamiento.
+*/
+
+/*-------- LIBRERIAS --------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "tiempo.h"
 #include "leer.h"
 #include "sortingAlgorithms.h"
-/*Instrucciones para compilar código
-1. Los .h y los .c deben estar en una sola carpeta.
-2. gcc 
+/*---------------------------*/
+
+/* |----- Instrucciones para compilar código -----|
+   | 1. Los .h y los .c deben estar en una sola carpeta.
+   | 2. gcc 
+   |----------------------------------------------|
 */
 
 int main(int argc, char const *argv[]){

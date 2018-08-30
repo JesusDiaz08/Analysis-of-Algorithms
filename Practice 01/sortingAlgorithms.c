@@ -45,7 +45,7 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void bubbleSortOptimized(int* numbers, int n){
-	
+
 }
 
 
@@ -71,8 +71,8 @@ void insertionSort(int* numbers, int n){
 			pos--;
 		}
 		numbers[pos] = tmp; /*Asignamos el valor de tmp en el indice 'pos'*/
-	}
-}
+	}/*cierra ciclo de i*/
+}/*cierra metodo insertionSort*/
 
 /*
 Nombre:			selectionSort
@@ -132,7 +132,7 @@ void shellSort(int* numbers, int n){
 			}
 			numbers[b + gap] = tmp;	/*Se asigna el valor del número almacenado en tmp a su
 									nueva posición en el (b+gap)-esimo indice del arreglo. */
-		}
+		}/*cierra bucle de i*/
 		gap /= 2;		/*Se vuelve a dividir el arreglo a la mitad de la mitad.*/
-	}
-}
+	}/*Ya no hay más subarreglo por procesar*/
+}/*cierra metodo de shell-sort*/
