@@ -1,0 +1,8 @@
+INSTRUCCIONES PARA SUBIR A GIT
+1. Realizar SIEMPRE: git pull
+2. git status
+3. git add .  
+   o tambien:
+   git add-A
+4. git commit -m "comentario que quieras"
+5. git push

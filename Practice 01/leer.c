@@ -21,7 +21,6 @@ int* readNumbers(int n){
 
 void printSorting(int* numbers, int n){
 	int k;
-	for(k=0;k < n; k++){
+	for(k=0;k < n; k++)
 		printf("%d - ",numbers[k]);
-	}
 }

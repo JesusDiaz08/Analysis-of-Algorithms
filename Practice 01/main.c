@@ -1,7 +1,7 @@
 /*
 Equipo:		- Díaz Medina Jesús Kaimorts.
 			- Herrera Ramírez Absalom.
-			- Ferrer Daniela.
+			- Ferrer González Daniela.
 
 Materia:	Análisis de Algoritmos.
 Fecha:		30 de Agosto del 2018.
@@ -21,7 +21,7 @@ Tema:		Algoritmos de ordenamiento.
 
 /* |----- Instrucciones para compilar código -----|
    | 1. Los .h y los .c deben estar en una sola carpeta.
-   | 2. gcc 
+   | 2. gcc main.c sortingAlgorithms.c tiempo.c leer.c -o main
    |----------------------------------------------|
 */
 
