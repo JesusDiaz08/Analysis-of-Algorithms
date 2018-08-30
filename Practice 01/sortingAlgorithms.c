@@ -90,9 +90,35 @@ Nombre:			shellSort
 Parámetros:		int* numbers, int n. 
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
-				Shell al conjunto de números dado.
+				Shell (incrementos decrecientes) al 
+				conjunto de números dado.
 Complejidad:	O(n*n)
 */
 void shellSort(int* numbers, int n){
-	
+	int gap;	/*Se guarda el tamaño de los subarreglos, el cual sera n/2 y sera
+				siempre menor al tamaño del problema: n. Se toma gap->suelo*/	
+	int i;		/*Es el indice que permite recorrer los i-esismo subarreglos
+				comenzando de la posicion gap.*/
+	int b;		/*Es el indice que permite el recorrido en el i-esimo subarreglo
+				desde la posicion 0 hasta la posicion de gap*/
+	int tmp;	/*Sera nuestra variable temporal en donde almacenaremos el valor
+				de la gap-esima posicion para ser comprado*/
+
+	gap = n/2;			/*Realizamos el primer subarreglo: la mitad del arreglo original*/
+	while(gap >= 1){   	/*Se hacen subarreglos hasta que los incrementos sean de 1 en 1*/
+		for(i = gap; i < n; i++){	/*Se hace el recorrido en el arreglo desde la posicion gap*/
+			tmp = numbers[i];		/*Se almacena el valor del arreglo en la i-esima posicion*/
+			b = i - gap;			/*Se hacen los brincos de gap-posiciones*/
+			while((b>=0) && (numbers[b] > tmp)){	/*Verificamos tantas veces necesarias si el 
+													valor de la posicion b es mayor a tmp*/
+				numbers[b + gap] = numbers[b];		/*Si el valor en la posicion b si es mayor, se
+													cambia el valor de dicha posición a la posicion
+													b+gap dentro del arreglo*/
+				b -= gap; 							
+			}
+			numbers[b + gap] = tmp;	/*Se asigna el valor del número almacenado en tmp a su
+									nueva posición en el (b+gap)-esimo indice del arreglo. */
+		}
+		gap /= 2;		/*Se vuelve a dividir el arreglo a la mitad de la mitad.*/
+	}
 }

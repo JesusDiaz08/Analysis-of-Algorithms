@@ -16,7 +16,6 @@ int main(int argc, char const *argv[]){
 		exit(1);
 	}
 
-
 	int n = atoi(argv[1]);	/*Tomamos el tamaño del arreglo a ordenar*/
 	int* numbers = leer(n);	/*Leemos los n-números del arreglo a ordenar*/
 
