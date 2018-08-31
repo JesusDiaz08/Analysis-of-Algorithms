@@ -95,6 +95,23 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void selectionSort(int* numbers, int n){
+	
+	int i, p, k, tmp;
+	
+	for(k = 0; k < n;k++)  		 /*Auxiliar para recorrer el arreglo*/
+	{
+		p = k;		/*Variable que guarda la posición del valor más pequeño en el arreglo*/
+		for(i = k + 1; i < n; i++)		/*Auxiliar para recorrer el subarreglo*/
+		{
+			if(numbers[i] < numbers[p])
+				p = i; /*Compara el valor del arreglo con los valores restantes
+				 y guarda la posición del valor más pequeño*/
+		}
+		tmp = numbers[p];
+		numbers[p] = numbers[k];
+		numbers[k] = tmp; /*Intercambia el valor más pequeño del arreglo
+		con el primer valor y se genera un subarreglo a partir de este último*/
+	}
 
 }
 
