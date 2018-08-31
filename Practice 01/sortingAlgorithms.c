@@ -11,14 +11,14 @@ Nota general:
 
 /*
 Nombre:			bubbleSort
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
-Descripción:	Se aplicará algoritmo de ordenamiento 
+Descripción:	Se aplicará algoritmo de ordenamiento
 				por burbuja	al conjunto de números dado.
 Complejidad:	O(n*n)
 */
 void bubbleSort(int* numbers, int n){
-	int i, j, tmp;	/*Se colocan los contadores i y j para recorrer el arreglo. 
+	int i, j, tmp;	/*Se colocan los contadores i y j para recorrer el arreglo.
 					Además de una variable temporal tmp para guardar el valor
 					de la posición que sea más grande al valor actual*/
 	for(i = 0;i < n; i++){	/*Ciclos que recorran al arreglo totalmente*/
@@ -37,21 +37,33 @@ void bubbleSort(int* numbers, int n){
 
 /*
 Nombre:			bubbleSortOptimized
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
-				por burbuja con mejoras, al conjunto 
+				por burbuja con mejoras, al conjunto
 				de números dado.
 Complejidad:	O(n*n)
 */
 void bubbleSortOptimized(int* numbers, int n){
-
-}
+    int aux, i, cambios = 0; /*i es una bandera*/
+    while ((i < n - 1) && (cambios != 0)){
+        cambios = 0;
+        for (int j = 0; j <= n - 2 - i; j++){
+            if (numbers [i] < numbers [j]){
+                aux = numbers [j];
+                numbers [j] = numbers [i];
+                numbers [i] = aux;
+                cambios = 1;
+            } /* cierre if */
+        } /* cierre for */
+        i++;
+    } /* cierre while*/
+} /* fin procedimiento */
 
 
 /*
 Nombre:			insertionSort
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
 				por inserción al conjunto de números dado.
@@ -76,7 +88,7 @@ void insertionSort(int* numbers, int n){
 
 /*
 Nombre:			selectionSort
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
 				por selección al conjunto de números dado.
@@ -88,10 +100,10 @@ void selectionSort(int* numbers, int n){
 
 /*
 Nombre:			binarySearchTree
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
-				con árbol binario de búsqueda al conjunto 
+				con árbol binario de búsqueda al conjunto
 				de números dado.
 Complejidad:	O(n*n)
 */
@@ -101,16 +113,16 @@ void binarySearchTree(int* numbers, int n){
 
 /*
 Nombre:			shellSort
-Parámetros:		int* numbers, int n. 
+Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
-				Shell (incrementos decrecientes) al 
+				Shell (incrementos decrecientes) al
 				conjunto de números dado.
 Complejidad:	O(n*n)
 */
 void shellSort(int* numbers, int n){
 	int gap;	/*Se guarda el tamaño de los subarreglos, el cual sera n/2 y sera
-				siempre menor al tamaño del problema: n. Se toma gap->suelo*/	
+				siempre menor al tamaño del problema: n. Se toma gap->suelo*/
 	int i;		/*Es el indice que permite recorrer los i-esismo subarreglos
 				comenzando de la posicion gap.*/
 	int b;		/*Es el indice que permite el recorrido en el i-esimo subarreglo
@@ -123,12 +135,12 @@ void shellSort(int* numbers, int n){
 		for(i = gap; i < n; i++){	/*Se hace el recorrido en el arreglo desde la posicion gap*/
 			tmp = numbers[i];		/*Se almacena el valor del arreglo en la i-esima posicion*/
 			b = i - gap;			/*Se hacen los brincos de gap-posiciones*/
-			while((b>=0) && (numbers[b] > tmp)){	/*Verificamos tantas veces necesarias si el 
+			while((b>=0) && (numbers[b] > tmp)){	/*Verificamos tantas veces necesarias si el
 													valor de la posicion b es mayor a tmp*/
 				numbers[b + gap] = numbers[b];		/*Si el valor en la posicion b si es mayor, se
 													cambia el valor de dicha posición a la posicion
 													b+gap dentro del arreglo*/
-				b -= gap; 							
+				b -= gap;
 			}
 			numbers[b + gap] = tmp;	/*Se asigna el valor del número almacenado en tmp a su
 									nueva posición en el (b+gap)-esimo indice del arreglo. */
