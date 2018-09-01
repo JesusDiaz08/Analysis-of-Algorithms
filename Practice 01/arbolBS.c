@@ -68,10 +68,9 @@ Node* createNode(int valor){
 
 /*
 Nombre:			fill_inOrden();
-Parámetros:		int valor
-Retorno:		Node* 
-Descripción:	La función se encarga de crear un nuevo nodo
-				asignandole el valor que es enviado por parametro
+Parámetros:		tree* a, int* array
+Retorno:		void* 
+Descripción:	
 */
 void fill_inOrden(tree* a, int* array){
 	

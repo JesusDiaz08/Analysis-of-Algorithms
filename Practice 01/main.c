@@ -10,23 +10,26 @@ Grupo:		3CM2.
 Tema:		Algoritmos de Ordenamiento.
 */
 
-/* |------------ Instrucciones para compilar código ------------|
-   | 1. Los .h y los .c deben estar en una sola carpeta.		|
-   | 2. gcc main.c sortingAlgorithms.c tiempo.c leer.c -o main  |
-   |------------------------------------------------------------|
+/* 
+   |------------ Instrucciones para compilar código ----------------------|
+   | 1. Los .h y los .c deben estar en una sola carpeta.				  |
+   | 2. gcc main.c sortingAlgorithms.c tiempo.c leer.c arbolBS.c -o main  |
+   |----------------------------------------------------------------------|
 */
 
 /*-------- LIBRERIAS --------*/
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "tiempo.h"
+#include <stdio.h>		/*printf y scanf*/
+#include <stdlib.h>		/*malloc*/
+#include <string.h>		/*memcpy*/
+#include "tiempo.h"		
 #include "leer.h"
+#include "arbolBS.h"
 #include "sortingAlgorithms.h"
 /*---------------------------*/
 typedef double D;
 
-/*|--------- Especificacion de variables que miden rendimiento en tiempo ---------|
+/*
+|--------- Especificacion de variables que miden rendimiento en tiempo ---------|
 	* Las variables que miden el rendimiento en tiempo total (wall_time), 
 	  tiempo de procesamiento de CPU (usr_time), tiempo en acciones E/S (sys_time) 
 	  y CPU Wall, en cada algoritmo de ordenamiento, van acompañados con el posfijo
@@ -44,8 +47,8 @@ typedef double D;
 					
 		_Bs_10: 	Bubble Sort Simple - Conteo de tiempo para las evaluaciones de rendimiento
 		_Bs_11:		Bubble Sort Simple - Evaluación de los tiempos de ejecución.		
-
-  |-------------------------------------------------------------------------------|*/
+|-------------------------------------------------------------------------------|
+*/
 
 int main(int argc, char const *argv[]){
 	
@@ -62,8 +65,7 @@ int main(int argc, char const *argv[]){
 	  usr_time_Sh_51, sys_time_Sh_51, wall_time_Sh_51,
 	  usr_time_BST_60, sys_time_BST_60, wall_time_BST_60,	/*Medicion para binarySearchTree*/
 	  usr_time_BST_61, sys_time_BST_61, wall_time_BST_61,
-	  real, user, system, cpu_wall; 
-	
+	  real, user, syst, cpu_wall; 
 	/*--------------------------------------------------*/
 
 	if (argc!=2){
@@ -73,7 +75,6 @@ int main(int argc, char const *argv[]){
 
 	int n = atoi(argv[1]);	/*Tomamos el tamaño del arreglo a ordenar*/
 	int* numbers = leer(n);	/*Leemos los n-números del arreglo a ordenar*/
-
 	
 	/*----------- Algoritmos de ordenamiento -----------*/
 		/*------------- BubbleSort -------------*/
@@ -81,13 +82,31 @@ int main(int argc, char const *argv[]){
 			uswtime(&usr_time_Bs_10, &sys_time_Bs_10, &wall_time_Bs_10);
 			bubbleSort(array_bubble,n);
 			uswtime(&usr_time_Bs_11, &sys_time_Bs_11, &wall_time_Bs_11);
+			
+			real = wall_time_Bs_11 - wall_time_Bs_10;
+			user = usr_time_Bs_11 - usr_time_Bs_10;
+			syst = sys_time_Bs_11 - sys_time_Bs_10;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+
+			free(array_bubble);
 		/*--------------------------------------*/
 
 		/*---------- BubbleSortOptimized -------*/
 			int * array_bubbleO = cpyArray(numbers,n);
 			uswtime(&usr_time_Bo_20, &sys_time_Bo_20, &wall_time_Bo_20);
 			bubbleSortOptimized(array_bubbleO,n);
-			uswtime(&usr_time_Bo_21, &sys_time_Bo_21, &wall_time_Bo_21);				
+			uswtime(&usr_time_Bo_21, &sys_time_Bo_21, &wall_time_Bo_21);
+
+			real = wall_time_Bs_21 - wall_time_Bs_20;
+			user = usr_time_Bs_21 - usr_time_Bs_20;
+			syst = sys_time_Bs_21 - sys_time_Bs_20;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+			
+			free(array_bubbleO);				
 		/*--------------------------------------*/
 
 		/*------------ InsertionSort -----------*/
@@ -95,6 +114,15 @@ int main(int argc, char const *argv[]){
 			uswtime(&usr_time_In_30, &sys_time_In_30, &wall_time_In_30);
 			insertionSort(array_insertion,n);
 			uswtime(&usr_time_In_31, &sys_time_In_31, &wall_time_In_31);
+
+			real = wall_time_In_31 - wall_time_In_30;
+			user = usr_time_In_31 - usr_time_In_30;
+			syst = sys_time_In_31 - sys_time_In_30;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+			
+			free(array_insertion);
 		/*--------------------------------------*/
 
 		/*------------ SelectionSort -----------*/
@@ -103,13 +131,30 @@ int main(int argc, char const *argv[]){
 			selectionSort(array_selection,n);
 			uswtime(&usr_time_Se_41, &sys_time_Se_41, &wall_time_Se_41);
 
+			real = wall_time_Se_41 - wall_time_Se_40;
+			user = usr_time_Se_41 - usr_time_Se_40;
+			syst = sys_time_Se_41 - sys_time_Se_40;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+			
+			free(array_selection);
 		/*--------------------------------------*/
 
 		/*------------- ShellSort --------------*/
 			int * array_shell = cpyArray(numbers,n);
 			uswtime(&usr_time_Sh_50, &sys_time_Sh_50, &wall_time_Sh_50);
 			shellSort(array_shell,n);
-			uswtime(&usr_time_Sh_51, &sys_time_Sh_51, &wall_time_Sh_51);		
+			uswtime(&usr_time_Sh_51, &sys_time_Sh_51, &wall_time_Sh_51);
+
+			real = wall_time_Sh_51 - wall_time_Sh_50;
+			user = usr_time_Sh_51 - usr_time_Sh_50;
+			syst = sys_time_Sh_51 - sys_time_Sh_50;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+			
+			free(array_shell);		
 		/*--------------------------------------*/
 		
 		/*---------- BinarySearchTree ----------*/
@@ -117,7 +162,16 @@ int main(int argc, char const *argv[]){
 			uswtime(&usr_time_BST_60, &sys_time_BST_60, &wall_time_BST_60);
 			binarySearchTree(array_bst,n);
 			uswtime(&usr_time_BST_61, &sys_time_BST_61, &wall_time_BST_61);
+			
+			real = wall_time_Sh_61 - wall_time_Sh_60;
+			user = usr_time_Sh_61 - usr_time_Sh_60;
+			syst = sys_time_Sh_61 - sys_time_Sh_60;
+			cpu_wall = getCPU_WALL(user, syst, real);
+
+			desc_time_efficiency(user, syst, real, cpu_wall);
+			
+			free(array_bst);
 		/*--------------------------------------*/
 	/*--------------------------------------------------*/
 	return 0;
-}
+}//cierra main
