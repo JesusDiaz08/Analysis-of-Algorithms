@@ -35,30 +35,52 @@ void bubbleSort(int* numbers, int n){
 	}/*cierra ciclo de i*/
 }/*cierra metodo de bubbleSort*/
 
+
 /*
 Nombre:			bubbleSortOptimized
 Parámetros:		int* numbers, int n.
 Retorno:		void
 Descripción:	Se aplicará algoritmo de ordenamiento
-				por burbuja con mejoras, al conjunto
-				de números dado.
+				por burbuja con mejoras para evitar re-
+				corridos extras innecesarios.
 Complejidad:	O(n*n)
 */
 void bubbleSortOptimized(int* numbers, int n){
-    int aux, i, cambios = 0; /*i es una bandera*/
-    while ((i < n - 1) && (cambios != 0)){
+    /* cambios es una bandera, se inicializa en
+    1, de lo contrario no se entra al for. aux
+    una variable temporal para guardar valores.
+    i y j variables para recorrer el arreglo */
+    int i, j, aux, cambios = 1; 
+    /* Mientras se esten haciendo cambios (es de-
+    cir que cambios == 1 y que se hayan intercam-
+    biado de posiciones valores en el arreglo), 
+    seguiremos recorriendolo. De lo contrario 
+    paramos de leerlo. He ahi la optimizacion con
+    respecto del algoritmo anterior.
+    Potencialmente, en el peor caso, se recorrera
+    el arreglo n - 1 veces*/
+    for (i = 0; i < n - 1 && cambios != 0; i++){ 
+        /* Comprobar que no haya cambios en el
+        recorrido */
         cambios = 0;
-        for (int j = 0; j <= n - 2 - i; j++){
-            if (numbers [i] < numbers [j]){
+        for (j = 0; j <= n - 2 - i; j++){
+            /* Comparamos si el número en la posición
+            actual es mayor al valor que está a su 
+            derecha */
+            if (numbers [j] > numbers [j + 1]){
+                /* Intercambio de posiciones del
+                numero menor con el numero mayor
+                a su derecha */
                 aux = numbers [j];
-                numbers [j] = numbers [i];
-                numbers [i] = aux;
+                numbers [j] = numbers [j + 1];
+                numbers [j + 1] = aux;
+                /* Se han hecho cambios, hay que
+                seguir recorriendo el arreglo */
                 cambios = 1;
-            } /* cierre if */
-        } /* cierre for */
-        i++;
-    } /* cierre while*/
-} /* fin procedimiento */
+            }
+        }
+    }
+}
 
 
 /*
