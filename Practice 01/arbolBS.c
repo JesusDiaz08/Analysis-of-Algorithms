@@ -74,5 +74,5 @@ Descripción:	La función se encarga de crear un nuevo nodo
 				asignandole el valor que es enviado por parametro
 */
 void fill_inOrden(tree* a, int* array){
-
+	
 }

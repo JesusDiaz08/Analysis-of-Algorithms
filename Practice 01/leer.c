@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "leer.h"
 
 /*
@@ -23,4 +24,10 @@ void printSorting(int* numbers, int n){
 	int k;
 	for(k=0;k < n; k++)
 		printf("%d - ",numbers[k]);
+}
+
+int * cpyArray(int const * number, size_t len){
+	int * array_aux = malloc(len * sizeof(int));
+	memcpy(array_aux, numbers, len * sizeof(int));
+	return array_aux;
 }

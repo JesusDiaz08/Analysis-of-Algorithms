@@ -77,10 +77,10 @@ void bubbleSortOptimized(int* numbers, int n){
                 /* Se han hecho cambios, hay que
                 seguir recorriendo el arreglo */
                 cambios = 1;
-            }
-        }
-    }
-}
+            }//cierra if 
+        }//cierra segundo for
+    }//cierra primer for
+}//cierra metodo de bubbleSortOptimized
 
 
 /*
@@ -128,14 +128,13 @@ void selectionSort(int* numbers, int n){
 			if(numbers[i] < numbers[p])
 				p = i; /*Compara el valor del arreglo con los valores restantes
 				 y guarda la posición del valor más pequeño*/
-		}
+		}//cierra for de recorrido por subarreglos
 		tmp = numbers[p];
 		numbers[p] = numbers[k];
 		numbers[k] = tmp; /*Intercambia el valor más pequeño del arreglo
 		con el primer valor y se genera un subarreglo a partir de este último*/
-	}
-
-}
+	}//cierra for de recorrido del arreglo
+}//cierra metodo de selectionSort
 
 /*
 Nombre:			binarySearchTree
@@ -147,7 +146,7 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 Complejidad:	O(n*n)
 */
 void binarySearchTree(int* numbers, int n){
-
+	
 }
 
 /*
@@ -180,7 +179,7 @@ void shellSort(int* numbers, int n){
 													cambia el valor de dicha posición a la posicion
 													b+gap dentro del arreglo*/
 				b -= gap;
-			}
+			}//cierra ciclo comparación por subarreglos
 			numbers[b + gap] = tmp;	/*Se asigna el valor del número almacenado en tmp a su
 									nueva posición en el (b+gap)-esimo indice del arreglo. */
 		}/*cierra bucle de i*/
