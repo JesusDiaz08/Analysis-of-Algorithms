@@ -145,8 +145,15 @@ Descripción:	Se aplicará algoritmo de ordenamiento
 				de números dado.
 Complejidad:	O(n*n)
 */
-void binarySearchTree(int* numbers, int n){
-	
+void binarySearchTree (int * numeros, int n){
+    int i = 0;
+    /* Creando el arbol con el primer valor del arreglo */
+    struct tNode * root = newtNode (numeros [0]);
+    /* Insertando todo el vector en el arbol */
+    for (i = 1; i < n; i++)
+        insert (root, numeros [i]);
+    /* Haciendo recorrido inOrder del arbol */
+    inOrder(root, numeros);
 }
 
 /*

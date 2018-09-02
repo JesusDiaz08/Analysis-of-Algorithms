@@ -23,7 +23,7 @@ Tema:		Algoritmos de Ordenamiento.
 #include <string.h>		/*memcpy*/
 #include "tiempo.h"		
 #include "leer.h"
-#include "arbolBS.h"
+#include "BST.h"
 #include "sortingAlgorithms.h"
 /*---------------------------*/
 typedef double D;
