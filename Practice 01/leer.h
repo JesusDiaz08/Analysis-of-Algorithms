@@ -16,3 +16,5 @@ double getCPU_WALL(double user, double syst, double real);
 void printSorting(int* numbers);
 void desc_time_efficiency(double user, double syst, 
 						  double real, double cpu_wall);
+
+/*Esta es una prueba que hago desde Manjaro*/
