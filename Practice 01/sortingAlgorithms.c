@@ -120,9 +120,9 @@ void selectionSort(int* numbers, int n){
 	
 	int i, p, k, tmp;
 	
-	for(k = 0; k < n;k++)  		 /*Auxiliar para recorrer el arreglo*/
+	for(k = 0; k < n - 1;k++)  		 /*Auxiliar para recorrer el arreglo*/
 	{
-		p = k;		/*Variable que guarda la posición del valor más pequeño en el arreglo*/
+		p = k;		/*Variable que guarda la posición del valor más pequeño en el arreglo */
 		for(i = k + 1; i < n; i++)		/*Auxiliar para recorrer el subarreglo*/
 		{
 			if(numbers[i] < numbers[p])
