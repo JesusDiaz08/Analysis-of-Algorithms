@@ -11,10 +11,10 @@ Tema:		Algoritmos de Ordenamiento.
 */
 
 /* 
-   |------------ Instrucciones para compilar código ----------------------|
-   | 1. Los .h y los .c deben estar en una sola carpeta.				  |
-   | 2. gcc main.c sortingAlgorithms.c tiempo.c leer.c arbolBS.c -o main  |
-   |----------------------------------------------------------------------|
+   |------------ Instrucciones para compilar código --------------------------|
+   | 1. Los .h y los .c deben estar en una sola carpeta.				                                         |
+   | 2. gcc main.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o main   |
+   |-------------------------------------------------------------------------|
 */
 
 /*-------- LIBRERIAS --------*/
@@ -74,10 +74,11 @@ int main(int argc, char const *argv[]){
 	}
 
 	int n = atoi(argv[1]);	/*Tomamos el tamaño del arreglo a ordenar*/
-	int* numbers = leer(n);	/*Leemos los n-números del arreglo a ordenar*/
+	int* numbers = readNumbers(n);	/*Leemos los n-números del arreglo a ordenar*/
 	
 	/*----------- Algoritmos de ordenamiento -----------*/
 		/*------------- BubbleSort -------------*/
+            printf("Bubble Sort");
 			int * array_bubble = cpyArray(numbers,n);
 			uswtime(&usr_time_Bs_10, &sys_time_Bs_10, &wall_time_Bs_10);
 			bubbleSort(array_bubble,n);
@@ -94,14 +95,15 @@ int main(int argc, char const *argv[]){
 		/*--------------------------------------*/
 
 		/*---------- BubbleSortOptimized -------*/
+            printf("Bubble Sort Optimized");
 			int * array_bubbleO = cpyArray(numbers,n);
 			uswtime(&usr_time_Bo_20, &sys_time_Bo_20, &wall_time_Bo_20);
 			bubbleSortOptimized(array_bubbleO,n);
 			uswtime(&usr_time_Bo_21, &sys_time_Bo_21, &wall_time_Bo_21);
 
-			real = wall_time_Bs_21 - wall_time_Bs_20;
-			user = usr_time_Bs_21 - usr_time_Bs_20;
-			syst = sys_time_Bs_21 - sys_time_Bs_20;
+			real = wall_time_Bo_21 - wall_time_Bo_20;
+			user = usr_time_Bo_21 - usr_time_Bo_20;
+			syst = sys_time_Bo_21 - sys_time_Bo_20;
 			cpu_wall = getCPU_WALL(user, syst, real);
 
 			desc_time_efficiency(user, syst, real, cpu_wall);
@@ -110,6 +112,7 @@ int main(int argc, char const *argv[]){
 		/*--------------------------------------*/
 
 		/*------------ InsertionSort -----------*/
+            printf("Insertion Sort");
 			int * array_insertion = cpyArray(numbers,n);
 			uswtime(&usr_time_In_30, &sys_time_In_30, &wall_time_In_30);
 			insertionSort(array_insertion,n);
@@ -126,6 +129,7 @@ int main(int argc, char const *argv[]){
 		/*--------------------------------------*/
 
 		/*------------ SelectionSort -----------*/
+            printf("Selection Sort");
 			int * array_selection = cpyArray(numbers,n);
 			uswtime(&usr_time_Se_40, &sys_time_Se_40, &wall_time_Se_40);
 			selectionSort(array_selection,n);
@@ -142,6 +146,7 @@ int main(int argc, char const *argv[]){
 		/*--------------------------------------*/
 
 		/*------------- ShellSort --------------*/
+            printf("Shell Sort");
 			int * array_shell = cpyArray(numbers,n);
 			uswtime(&usr_time_Sh_50, &sys_time_Sh_50, &wall_time_Sh_50);
 			shellSort(array_shell,n);
@@ -158,14 +163,15 @@ int main(int argc, char const *argv[]){
 		/*--------------------------------------*/
 		
 		/*---------- BinarySearchTree ----------*/
+            printf("Binary Search Tree");
 			int * array_bst = cpyArray(numbers,n);
 			uswtime(&usr_time_BST_60, &sys_time_BST_60, &wall_time_BST_60);
 			binarySearchTree(array_bst,n);
 			uswtime(&usr_time_BST_61, &sys_time_BST_61, &wall_time_BST_61);
 			
-			real = wall_time_Sh_61 - wall_time_Sh_60;
-			user = usr_time_Sh_61 - usr_time_Sh_60;
-			syst = sys_time_Sh_61 - sys_time_Sh_60;
+			real = wall_time_BST_61 - wall_time_BST_60;
+			user = usr_time_BST_61 - usr_time_BST_60;
+			syst = sys_time_BST_61 - sys_time_BST_60;
 			cpu_wall = getCPU_WALL(user, syst, real);
 
 			desc_time_efficiency(user, syst, real, cpu_wall);
