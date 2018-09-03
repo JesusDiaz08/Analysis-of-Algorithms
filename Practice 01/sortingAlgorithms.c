@@ -8,6 +8,7 @@ Nota general:
 */
 
 #include "sortingAlgorithms.h"
+#include "BST.h"
 
 /*
 Nombre:			bubbleSort
