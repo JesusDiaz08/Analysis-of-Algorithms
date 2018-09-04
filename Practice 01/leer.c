@@ -73,24 +73,10 @@ Descripción:	La función se encarga de mostrar en pantalla
 				los tiempos de ejecución que describen el
 				rendimiento del algoritmo de ordenamiento 
 */
-void desc_time_efficiency(double user, double syst, 
-						  double real, double cpu_wall){
-
-	printf("Formato flotante.\n");
-	printf("real (Tiempo total)  %.10f s\n",  real);
-	printf("user (Tiempo de procesamiento en CPU) %.10f s\n", user);
-	printf("sys (Tiempo en acciónes de E/S)  %.10f s\n", syst);
-	printf("CPU/Wall   %.10f %% \n", cpu_wall);
+void desc_time_efficiency(double user, double syst, double real, double cpu_wall, char* typeAlgorithm){
+    
+    printf ("%s | %.10f s |  %.10f s | %.10f s | %.10f s | %.10f s",typeAlgorithm,user,syst,real,cpu_wall);
 	printf("\n");
-
-	//Mostrar los tiempos en formato exponecial
-	printf("Formato Exponencial.\n");
-	printf("real (Tiempo total)  %.10e s\n",  real);
-	printf("user (Tiempo de procesamiento en CPU) %.10e s\n",  user);
-	printf("sys (Tiempo en acciónes de E/S)  %.10e s\n",  syst);
-	printf("CPU/Wall   %.10f %% \n", cpu_wall);
+    printf ("%s |  %.10e s |  %.10e s | %.10e s | %.10e s | %.10f s",typeAlgorithm,user,syst,real,cpu_wall);
 	printf("\n");
-	
-	printf("______________________\n");
-
 }

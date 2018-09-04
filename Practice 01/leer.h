@@ -15,6 +15,6 @@ int * cpyArray(int const * number, size_t len);
 double getCPU_WALL(double user, double syst, double real);
 void printSorting(int* numbers,int n);
 void desc_time_efficiency(double user, double syst, 
-						  double real, double cpu_wall);
+						  double real, double cpu_wall, char * typoAlgorithm);
 
 /*Esta es una prueba que hago desde Manjaro*/
