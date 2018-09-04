@@ -1,25 +1,50 @@
 #!/bin/bash
 clear
-echo "Iniciando compilacion"
-gcc main.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o ord >> comandos.txt
+echo "Iniciando compilacion" >> comandos.txt
+echo " "
+gcc main_bubble_simple.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o bbs >> comandos.txt
+echo "Bubble Sort Simple ready" >> comandos.txt
 
-echo "Algoritmo | user | syst | real | cpu_wall" >> salida.txt
-./ord 10000 < Numeros/numeros10millones.txt >> salida.txt
-./ord 50000 < Numeros/numeros10millones.txt >> salida.txt
-./ord 100000 < Numeros/numeros10millones.txt >> salida.txt
-./ord 200000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 400000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 600000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 800000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 1000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 2000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 3000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 4000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 5000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 6000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 7000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 8000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 9000000 < Numeros/numeros10millones.txt >> salida.txt
-#./ord 10000000 < Numeros/numeros10millones.txt >> salida.txt
+gcc main_bubble_optimized.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o bbo >> comandos.txt
+echo "Bubble Sort Optimized ready" >> comandos.txt
+
+gcc main_insertion.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o insertion >> comandos.txt
+echo "Insertion Sort ready" >> comandos.txt
+
+gcc main_selection.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o selection >> comandos.txt
+echo "Selection Sort ready" >> comandos.txt
+
+gcc main_bst.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o bst
+echo "Binary Search Tree ready" >> comandos.txt
+
+gcc main_shell.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o shell >> comandos.txt
+echo "Shell Sort ready" >> comandos.txt
+
+
+echo "Bubble Sort Simple" >> bubble_simple.txt
+echo " " >> bubble_simple.txt
+./bbs 100 < Numeros/numeros10millones.txt >> bubble_simple.txt
+./bbs 1000 < Numeros/numeros10millones.txt >> bubble_simple.txt
+./bbs 10000 < Numeros/numeros10millones.txt >> bubble_simple.txt
+./bbs 50000 < Numeros/numeros10millones.txt >> bubble_simple.txt
+./bbs 100000 < Numeros/numeros10millones.txt >> bubble_simple.txt
+
+echo "Bubble Sort Optimized" >> bubble_optimized.txt
+echo " " >> bubble_optimized.txt
+./bbo 100 < Numeros/numeros10millones.txt >> bubble_optimized.txt
+./bbo 1000 < Numeros/numeros10millones.txt >> bubble_optimized.txt
+./bbo 10000 < Numeros/numeros10millones.txt >> bubble_optimized.txt
+./bbo 50000 < Numeros/numeros10millones.txt >> bubble_optimized.txt
+./bbo 100000 < Numeros/numeros10millones.txt >> bubble_optimized.txt
+
+echo "Insertion Sort" >> insertion.txt
+echo " " >> insertion.txt
+./insertion 100 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 1000 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 10000 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 100000 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 500000 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 1000000 < Numeros/numeros10millones.txt >> insertion.txt
+
 
 

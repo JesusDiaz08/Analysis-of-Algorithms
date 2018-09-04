@@ -26,6 +26,7 @@ Tema:		Algoritmos de Ordenamiento.
 #include "BST.h"
 #include "sortingAlgorithms.h"
 /*---------------------------*/
+
 typedef double D;
 
 /*
