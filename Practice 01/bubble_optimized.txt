@@ -1,0 +1,16 @@
+Bubble Sort Optimized
+ 
+
+______________________
+---> N = 75000  
+Formato flotante.
+|  real (Tiempo total):	 17.9271647930 s
+|  user (Tiempo de procesamiento en CPU):	 17.9263810000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0004290000 s
+|  CPU/Wall:	  99.9980209195 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 1.7927164793e+01 s
+|  user (Tiempo de procesamiento en CPU):	 1.7926381000e+01 s
+|  sys (Tiempo en acciónes de E/S):	  4.2900000000e-04 s
+|  CPU/Wall: 	 99.9980209195 % 

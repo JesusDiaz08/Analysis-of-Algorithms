@@ -1,0 +1,48 @@
+Shell Sort
+ 
+
+______________________
+---> N = 1000000  
+Formato flotante.
+|  real (Tiempo total):	 0.3957080841 s
+|  user (Tiempo de procesamiento en CPU):	 0.3957170000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000000000 s
+|  CPU/Wall:	  100.0022531492 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 3.9570808411e-01 s
+|  user (Tiempo de procesamiento en CPU):	 3.9571700000e-01 s
+|  sys (Tiempo en acciónes de E/S):	  0.0000000000e+00 s
+|  CPU/Wall: 	 100.0022531492 % 
+Shell Sort
+ 
+
+______________________
+---> N = 5000000  
+Formato flotante.
+|  real (Tiempo total):	 2.6130080223 s
+|  user (Tiempo de procesamiento en CPU):	 2.6124490000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000000000 s
+|  CPU/Wall:	  99.9786061771 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 2.6130080223e+00 s
+|  user (Tiempo de procesamiento en CPU):	 2.6124490000e+00 s
+|  sys (Tiempo en acciónes de E/S):	  0.0000000000e+00 s
+|  CPU/Wall: 	 99.9786061771 % 
+Shell Sort
+ 
+
+______________________
+---> N = 10000000  
+Formato flotante.
+|  real (Tiempo total):	 5.8495399952 s
+|  user (Tiempo de procesamiento en CPU):	 5.8495460000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000080000 s
+|  CPU/Wall:	  100.0002394172 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 5.8495399952e+00 s
+|  user (Tiempo de procesamiento en CPU):	 5.8495460000e+00 s
+|  sys (Tiempo en acciónes de E/S):	  8.0000000000e-06 s
+|  CPU/Wall: 	 100.0002394172 % 

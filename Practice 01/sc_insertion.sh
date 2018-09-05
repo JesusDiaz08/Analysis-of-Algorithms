@@ -12,7 +12,7 @@ echo " " >> insertion.txt
 #./insertion 400000 < Numeros/numeros10millones.txt >> insertion.txt
 #./insertion 600000 < Numeros/numeros10millones.txt >> insertion.txt
 #./insertion 800000 < Numeros/numeros10millones.txt >> insertion.txt
-#./insertion 100000 < Numeros/numeros10millones.txt >> insertion.txt
+./insertion 100000 < Numeros/numeros10millones.txt >> insertion.txt
 #./insertion 1000000 < Numeros/numeros10millones.txt >> insertion.txt
 #./insertion 2000000 < Numeros/numeros10millones.txt >> insertion.txt
 #./insertion 3000000 < Numeros/numeros10millones.txt >> insertion.txt

@@ -21,4 +21,4 @@ echo " " >> shell.txt
 #./shell 7000000 < Numeros/numeros10millones.txt >> shell.txt
 #./shell 8000000 < Numeros/numeros10millones.txt >> shell.txt
 #./shell 9000000 < Numeros/numeros10millones.txt >> shell.txt
-#./shell 10000000 < Numeros/numeros10millones.txt >> shell.txt
+./shell 10000000 < Numeros/numeros10millones.txt >> shell.txt

@@ -1,0 +1,58 @@
+Bubble Sort Simple
+ 
+
+______________________
+---> N = 100  
+Formato flotante.
+|  real (Tiempo total):	 0.0000510216 s
+|  user (Tiempo de procesamiento en CPU):	 0.0000530000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000000000 s
+|  CPU/Wall:	  103.8776224299 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 5.1021575928e-05 s
+|  user (Tiempo de procesamiento en CPU):	 5.3000000000e-05 s
+|  sys (Tiempo en acciónes de E/S):	  0.0000000000e+00 s
+|  CPU/Wall: 	 103.8776224299 % 
+
+______________________
+---> N = 1000  
+Formato flotante.
+|  real (Tiempo total):	 0.0031669140 s
+|  user (Tiempo de procesamiento en CPU):	 0.0031690000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000000000 s
+|  CPU/Wall:	  100.0658689754 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 3.1669139862e-03 s
+|  user (Tiempo de procesamiento en CPU):	 3.1690000000e-03 s
+|  sys (Tiempo en acciónes de E/S):	  0.0000000000e+00 s
+|  CPU/Wall: 	 100.0658689754 % 
+
+______________________
+---> N = 10000  
+Formato flotante.
+|  real (Tiempo total):	 0.4087419510 s
+|  user (Tiempo de procesamiento en CPU):	 0.4052320000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0033320000 s
+|  CPU/Wall:	  99.9564637326 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 4.0874195099e-01 s
+|  user (Tiempo de procesamiento en CPU):	 4.0523200000e-01 s
+|  sys (Tiempo en acciónes de E/S):	  3.3320000000e-03 s
+|  CPU/Wall: 	 99.9564637326 % 
+
+______________________
+---> N = 50000  
+Formato flotante.
+|  real (Tiempo total):	 11.3262889385 s
+|  user (Tiempo de procesamiento en CPU):	 11.3203900000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0033330000 s
+|  CPU/Wall:	  99.9773452846 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 1.1326288939e+01 s
+|  user (Tiempo de procesamiento en CPU):	 1.1320390000e+01 s
+|  sys (Tiempo en acciónes de E/S):	  3.3330000000e-03 s
+|  CPU/Wall: 	 99.9773452846 % 

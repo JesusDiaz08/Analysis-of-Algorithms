@@ -1,0 +1,16 @@
+Selection Sort
+ 
+
+______________________
+---> N = 1000000  
+Formato flotante.
+|  real (Tiempo total):	 1303.2216238976 s
+|  user (Tiempo de procesamiento en CPU):	 1303.1188220000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0866660000 s
+|  CPU/Wall:	  99.9987618455 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 1.3032216239e+03 s
+|  user (Tiempo de procesamiento en CPU):	 1.3031188220e+03 s
+|  sys (Tiempo en acciónes de E/S):	  8.6666000000e-02 s
+|  CPU/Wall: 	 99.9987618455 % 

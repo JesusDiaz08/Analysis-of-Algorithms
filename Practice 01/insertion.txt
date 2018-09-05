@@ -1,0 +1,16 @@
+Insertion Sort
+ 
+
+______________________
+---> N = 100000  
+Formato flotante.
+|  real (Tiempo total):	 7.3775529861 s
+|  user (Tiempo de procesamiento en CPU):	 7.3759910000 s
+|  sys (Tiempo en acciónes de E/S):	 0.0000000000 s
+|  CPU/Wall:	  99.9788278560 % 
+
+Formato Exponencial.
+|  real (Tiempo total):	 7.3775529861e+00 s
+|  user (Tiempo de procesamiento en CPU):	 7.3759910000e+00 s
+|  sys (Tiempo en acciónes de E/S):	  0.0000000000e+00 s
+|  CPU/Wall: 	 99.9788278560 % 
