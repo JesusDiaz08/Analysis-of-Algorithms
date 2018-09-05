@@ -59,12 +59,19 @@ void inOrder(struct tNode *root, int * A)
 /* Insercion iterativa al arbol */
 struct tNode * insert(struct tNode *root, int data) {
     struct tNode ** pp = &root;
+    /* Hacemos recorrido de todo el arbol */
     while (*pp != NULL) {
+        /* Si nuestro numero es mayor
+        que el del nodo actual, entonces
+        nos vamos a la derecha, si no,
+        entonces a la izquierda */
         if (data > (*pp) -> key)
             pp = & (*pp) -> right;
         else
             pp = & (*pp) -> left;
     }
+    /* Creamos el nodo que va a guardar a nuestro
+    numero */
     * pp = newtNode(data);
     return root;
 }

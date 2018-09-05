@@ -56,3 +56,7 @@ Formato Exponencial.
 |  user (Tiempo de procesamiento en CPU):	 1.1320390000e+01 s
 |  sys (Tiempo en acciónes de E/S):	  3.3330000000e-03 s
 |  CPU/Wall: 	 99.9773452846 % 
+Bubble Sort Simple
+ 
+Bubble Sort Simple
+ 

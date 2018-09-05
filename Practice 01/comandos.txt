@@ -54,3 +54,10 @@ Insertion Sort ready
 Selection Sort ready
 Binary Search Tree ready
 Shell Sort ready
+Iniciando compilacion
+Bubble Sort Simple ready
+Bubble Sort Optimized ready
+Insertion Sort ready
+Selection Sort ready
+Binary Search Tree ready
+Shell Sort ready

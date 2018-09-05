@@ -4,13 +4,13 @@ Binary Search Tree
 ______________________
 ---> N = 10000000  
 Formato flotante.
-|  real (Tiempo total):	 15.6889841557 s
-|  user (Tiempo de procesamiento en CPU):	 15.5590050000 s
-|  sys (Tiempo en acciónes de E/S):	 0.1299730000 s
-|  CPU/Wall:	  99.9999607645 % 
+|  real (Tiempo total):	 40.2969291210 s
+|  user (Tiempo de procesamiento en CPU):	 36.6753690000 s
+|  sys (Tiempo en acciónes de E/S):	 0.5129830000 s
+|  CPU/Wall:	  92.2858213049 % 
 
 Formato Exponencial.
-|  real (Tiempo total):	 1.5688984156e+01 s
-|  user (Tiempo de procesamiento en CPU):	 1.5559005000e+01 s
-|  sys (Tiempo en acciónes de E/S):	  1.2997300000e-01 s
-|  CPU/Wall: 	 99.9999607645 % 
+|  real (Tiempo total):	 4.0296929121e+01 s
+|  user (Tiempo de procesamiento en CPU):	 3.6675369000e+01 s
+|  sys (Tiempo en acciónes de E/S):	  5.1298300000e-01 s
+|  CPU/Wall: 	 92.2858213049 % 
