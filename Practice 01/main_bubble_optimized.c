@@ -29,28 +29,6 @@ Tema:		Algoritmos de Ordenamiento.
 /*---------------------------*/
 typedef double D;
 
-/*
-|--------- Especificacion de variables que miden rendimiento en tiempo ---------|
-	* Las variables que miden el rendimiento en tiempo total (wall_time), 
-	  tiempo de procesamiento de CPU (usr_time), tiempo en acciones E/S (sys_time) 
-	  y CPU Wall, en cada algoritmo de ordenamiento, van acompañados con el posfijo
-	  del método de ordenamiento que se está ejecutando:
-
-					_Bs: 	Bubble Sort Simple
-					_Bo: 	Bubble Sort Optimized
-					_In: 	Insertion Sort
-					_Se: 	Selection Sort
-					_Sh: 	Shell Sort
-					_BST: 	Binary Searching Tree
-
-	* Además, despues de dicho posfijo, vienen enumarados con una referencia que 
-	  describe qué número de algoritmo es, y antes o despues del algoritmo ejecutado:
-					
-		_Bs_10: 	Bubble Sort Simple - Conteo de tiempo para las evaluaciones de rendimiento
-		_Bs_11:		Bubble Sort Simple - Evaluación de los tiempos de ejecución.		
-|-------------------------------------------------------------------------------|
-*/
-
 int main(int argc, char const *argv[]){
     D usr_time_Bo_20, sys_time_Bo_20, wall_time_Bo_20, 		/*Medicion para bubbleSortOptimized*/
 	    usr_time_Bo_21, sys_time_Bo_21, wall_time_Bo_21,

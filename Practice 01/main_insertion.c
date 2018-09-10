@@ -8,10 +8,8 @@ Fecha:		30 de Agosto del 2018.
 Practica:	01.
 Grupo:		3CM2.
 Tema:		Algoritmos de Ordenamiento.
-*/
-
-/* 
- * Este archivo solo contiene el método de ordenamiento de insercion: Insertion Sort
+ 
+* Este archivo solo contiene el método de ordenamiento de insercion: Insertion Sort
    |------------ Instrucciones para compilar código ---------------------------------------|
    | 1. Los .h y los .c deben estar en una sola carpeta.				                                                                    |
    | 2. gcc main_insertion.c sortingAlgorithms.c tiempo.c leer.c BST.c btStack.c -o insertion |
@@ -29,28 +27,6 @@ Tema:		Algoritmos de Ordenamiento.
 /*---------------------------*/
 typedef double D;
 
-/*
-|--------- Especificacion de variables que miden rendimiento en tiempo ---------|
-	* Las variables que miden el rendimiento en tiempo total (wall_time), 
-	  tiempo de procesamiento de CPU (usr_time), tiempo en acciones E/S (sys_time) 
-	  y CPU Wall, en cada algoritmo de ordenamiento, van acompañados con el posfijo
-	  del método de ordenamiento que se está ejecutando:
-
-					_Bs: 	Bubble Sort Simple
-					_Bo: 	Bubble Sort Optimized
-					_In: 	Insertion Sort
-					_Se: 	Selection Sort
-					_Sh: 	Shell Sort
-					_BST: 	Binary Searching Tree
-
-	* Además, despues de dicho posfijo, vienen enumarados con una referencia que 
-	  describe qué número de algoritmo es, y antes o despues del algoritmo ejecutado:
-					
-		_Bs_10: 	Bubble Sort Simple - Conteo de tiempo para las evaluaciones de rendimiento
-		_Bs_11:		Bubble Sort Simple - Evaluación de los tiempos de ejecución.		
-|-------------------------------------------------------------------------------|
-*/
-
 int main(int argc, char const *argv[]){
     D usr_time_In_30, sys_time_In_30, wall_time_In_30, 		/*Medicion para insertionSort*/
 	  usr_time_In_31, sys_time_In_31, wall_time_In_31,
@@ -65,19 +41,19 @@ int main(int argc, char const *argv[]){
 	int* numbers = readNumbers(n);	/*Leemos los n-números del arreglo a ordenar*/
     
    /*------------ InsertionSort -----------*/
-            int * array_insertion = cpyArray(numbers,n);
-			uswtime(&usr_time_In_30, &sys_time_In_30, &wall_time_In_30);
-			insertionSort(array_insertion,n);
-			uswtime(&usr_time_In_31, &sys_time_In_31, &wall_time_In_31);
+        int * array_insertion = cpyArray(numbers,n);
+		uswtime(&usr_time_In_30, &sys_time_In_30, &wall_time_In_30);
+		insertionSort(array_insertion,n);
+		uswtime(&usr_time_In_31, &sys_time_In_31, &wall_time_In_31);
 
-			real = wall_time_In_31 - wall_time_In_30;
-			user = usr_time_In_31 - usr_time_In_30;
-			syst = sys_time_In_31 - sys_time_In_30;
-			cpu_wall = getCPU_WALL(user, syst, real);
+		real = wall_time_In_31 - wall_time_In_30;
+		user = usr_time_In_31 - usr_time_In_30;
+		syst = sys_time_In_31 - sys_time_In_30;
+		cpu_wall = getCPU_WALL(user, syst, real);
 
-			desc_time_efficiency(user, syst, real, cpu_wall,n);
-			
-			free(array_insertion);
+		desc_time_efficiency(user, syst, real, cpu_wall,n);
+		
+		free(array_insertion);
 		/*--------------------------------------*/    
         
     return 0;

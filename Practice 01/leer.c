@@ -74,18 +74,18 @@ Descripción:	La función se encarga de mostrar en pantalla
 				rendimiento del algoritmo de ordenamiento 
 */
 void desc_time_efficiency(double user, double syst, double real, double cpu_wall, int n){
-        printf("\n______________________");
-        printf("\n---> N = %d  \n", n);
-        printf("Formato flotante.\n");
-        printf("|  real (Tiempo total):\t %.10f s\n",  real);
-        printf("|  user (Tiempo de procesamiento en CPU):\t %.10f s\n", user);
-        printf("|  sys (Tiempo en acciónes de E/S):\t %.10f s\n", syst);
-        printf("|  CPU/Wall:\t  %.10f %% \n", cpu_wall);
-        printf("\n");
-        //Mostrar los tiempos en formato exponecial
-        printf("Formato Exponencial.\n");
-        printf("|  real (Tiempo total):\t %.10e s\n",  real);
-        printf("|  user (Tiempo de procesamiento en CPU):\t %.10e s\n",  user);
-        printf("|  sys (Tiempo en acciónes de E/S):\t  %.10e s\n",  syst);
-        printf("|  CPU/Wall: \t %.10f %% \n", cpu_wall);
+    printf("\n______________________");
+    printf("\n---> N = %d  \n", n);
+    printf("Formato flotante.\n");
+    printf("|  real (Tiempo total):\t %.10f s\n",  real);
+    printf("|  user (Tiempo de procesamiento en CPU):\t %.10f s\n", user);
+    printf("|  sys (Tiempo en acciónes de E/S):\t %.10f s\n", syst);
+    printf("|  CPU/Wall:\t  %.10f %% \n", cpu_wall);
+    printf("\n");
+    //Mostrar los tiempos en formato exponecial
+    printf("Formato Exponencial.\n");
+    printf("|  real (Tiempo total):\t %.10e s\n",  real);
+    printf("|  user (Tiempo de procesamiento en CPU):\t %.10e s\n",  user);
+    printf("|  sys (Tiempo en acciónes de E/S):\t  %.10e s\n",  syst);
+    printf("|  CPU/Wall: \t %.10f %% \n", cpu_wall);
 }
