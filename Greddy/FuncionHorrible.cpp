@@ -22,6 +22,9 @@ bool compararIndice(ii tuplaA, ii tuplaB){
 }
 
 int main(){
+    ios::sync_with_stdio(0); 
+	cin.tie(0);
+    cout.tie(0);
     lli M,N,K,tipo,A,B,x;
     vii conjunto;
 
