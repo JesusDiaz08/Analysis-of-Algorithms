@@ -5,6 +5,9 @@ var colorneutro = 'white'; // color sin leer
 var colorres = 'red'; // color del resultados
 var animar = false; // bandera para animar solo cuando se presione el boton
 
+var max_so_far = Number.MIN_SAFE_INTEGER; // Variables Kadane
+	var max_ending_here = 0;
+
 function showEntrada() { // Funcion que se llama al principio de animar
     let elementos = document.getElementById("inputValues").value;
     let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
@@ -19,20 +22,22 @@ function showEntrada() { // Funcion que se llama al principio de animar
 	fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
 	animar = true; // Animar 
 	noLoop(); // Animar solo una vez
+	animar = false;
 	kadane ();
 }
 
 
 function setup() // Se ejecuta al cargar
 {
-  createCanvas(700, 400);  
+  createCanvas(900, 400);  
 }
 
 function draw() // Se ejecuta infinitamente a menos que se use NoLoop ()
 { 
 	if (animar){
 		console.log("en draw");
-		drawArray (numeros, 10, 10, 50);
+		drawArray (numeros, 10, 10, 70);
+		drawResults (10, 10, 50);
 		animar = false;
 	} 
 }
@@ -51,21 +56,49 @@ function drawArray (arr, x, y, size){ // Funcion para dibujar el arreglo x y y p
 	}
 }
 
+function drawResults (x, y, size){ // x y y son referencia del arreglo para no dibujar sobre el
+	y = y + 50;
+	stroke ('black');
+	fill ('black');
+	textSize (size/2);
+	text ("Maximo hasta ahora: " + max_ending_here, x, y + 2 * size);
+	text ("Maximo general: " + max_so_far, x, y + 4 * size);
+}
+
 async function kadane () {
-	let max_so_far = Number.MIN_SAFE_INTEGER;
-	let max_ending_here = 0;
 	let i;
+	let start = 0, end = 0, s = 0;
 	for (i = 0; i < numeros.length; i++) 
     { 
         max_ending_here = max_ending_here + numeros[i];
         colores[i] = colorleido;
+        
         if (max_so_far < max_ending_here) 
-            max_so_far = max_ending_here; 
+        { 
+            max_so_far = max_ending_here;
+
+            let j;
+            for (j = start; j <= end; j++){
+            	colores [j] = colorleido;
+            } 
+
+            start = s; 
+            end = i;
+            
+            for (j = start; j <= end; j++){
+            	colores [j] = colorres;
+            }
+        } 
         if (max_ending_here < 0) 
+        { 
             max_ending_here = 0; 
+            s = i + 1; 
+        }
+
         console.log("en for");
         await sleep(2000);
         animar = true;
+        setup();
         redraw();
     } 
     let fieldNameElement = document.getElementById("res");
