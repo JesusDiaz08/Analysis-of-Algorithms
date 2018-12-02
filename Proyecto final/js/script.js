@@ -10,7 +10,7 @@ var max_so_far = Number.MIN_SAFE_INTEGER; // Variables Kadane
 
 function showEntrada() { // Funcion que se llama al principio de animar
     let elementos = document.getElementById("inputValues").value;
-    let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
+    //let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
     
     let tokens = elementos.split (" ");
     let j;
@@ -19,7 +19,7 @@ function showEntrada() { // Funcion que se llama al principio de animar
 		colores.push(colorneutro);
 	}
 
-	fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
+	//fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
 	animar = true; // Animar 
 	noLoop(); // Animar solo una vez
 	animar = false;
@@ -58,11 +58,15 @@ function drawArray (arr, x, y, size){ // Funcion para dibujar el arreglo x y y p
 
 function drawResults (x, y, size){ // x y y son referencia del arreglo para no dibujar sobre el
 	y = y + 50;
-	stroke ('black');
-	fill ('black');
+	
 	textSize (size/2);
-	text ("Maximo hasta ahora: " + max_ending_here, x, y + 2 * size);
-	text ("Maximo general: " + max_so_far, x, y + 4 * size);
+	fill (colorres);
+	stroke (colorres);
+	text ("Maximo general: " + max_so_far, x, y + 2 * size);
+	fill (colorleido);
+	stroke (colorleido);
+	text ("Maximo hasta ahora: " + max_ending_here, x, y + 4 * size);
+	fill ('black');	
 }
 
 async function kadane () {
@@ -101,10 +105,12 @@ async function kadane () {
         setup();
         redraw();
     } 
-    let fieldNameElement = document.getElementById("res");
-    fieldNameElement.innerHTML = max_so_far; // prueba funcionamiento
-
-	
+    //let fieldNameElement = document.getElementById("res");
+    //fieldNameElement.innerHTML = max_so_far; // prueba funcionamiento
+    numeros = [];
+	colores = [];
+	max_so_far = Number.MIN_SAFE_INTEGER;
+	max_ending_here = 0;
 }
 
 function sleep(ms) {
