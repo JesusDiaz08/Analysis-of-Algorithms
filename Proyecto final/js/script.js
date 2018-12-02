@@ -5,7 +5,7 @@ var colorneutro = 'white'; // color sin leer
 var colorres = 'red'; // color del resultados
 var animar = false; // bandera para animar solo cuando se presione el boton
 
-function showEntrada() {
+function showEntrada() { // Funcion que se llama al principio de animar
     let elementos = document.getElementById("inputValues").value;
     let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
     
@@ -19,6 +19,7 @@ function showEntrada() {
 	fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
 	animar = true; // Animar 
 	noLoop(); // Animar solo una vez
+	kadane ();
 }
 
 
@@ -30,7 +31,7 @@ function setup() // Se ejecuta al cargar
 function draw() // Se ejecuta infinitamente a menos que se use NoLoop ()
 { 
 	if (animar){
-		let j;
+		console.log("en draw");
 		drawArray (numeros, 10, 10, 50);
 		animar = false;
 	} 
@@ -48,4 +49,31 @@ function drawArray (arr, x, y, size){ // Funcion para dibujar el arreglo x y y p
 		fill ('black'); // Escribir numero en negro
 		text (numeros[i], posx + (size/2), y + (size/2) + (size/10)); // Se escribe numero aprox. en el centro del cuadro
 	}
+}
+
+async function kadane () {
+	let max_so_far = Number.MIN_SAFE_INTEGER;
+	let max_ending_here = 0;
+	let i;
+	for (i = 0; i < numeros.length; i++) 
+    { 
+        max_ending_here = max_ending_here + numeros[i];
+        colores[i] = colorleido;
+        if (max_so_far < max_ending_here) 
+            max_so_far = max_ending_here; 
+        if (max_ending_here < 0) 
+            max_ending_here = 0; 
+        console.log("en for");
+        await sleep(2000);
+        animar = true;
+        redraw();
+    } 
+    let fieldNameElement = document.getElementById("res");
+    fieldNameElement.innerHTML = max_so_far; // prueba funcionamiento
+
+	
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
