@@ -52,7 +52,7 @@ function drawArray (arr, x, y, size){ // Funcion para dibujar el arreglo x y y p
 		fill (colores[i]); // Llenar el cuadro de acuerdo a su color correspondiente
 		rect (posx, y, size, size);
 		fill ('black'); // Escribir numero en negro
-		text (numeros[i], posx + (size/2), y + (size/2) + (size/10)); // Se escribe numero aprox. en el centro del cuadro
+		text (numeros[i], posx-20 + (size/2), y + (size/2) + (size/10)); // Se escribe numero aprox. en el centro del cuadro
 	}
 }
 
