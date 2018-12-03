@@ -11,19 +11,32 @@ var max_so_far = Number.MIN_SAFE_INTEGER; // Variables Kadane
 function showEntrada() { // Funcion que se llama al principio de animar
     let elementos = document.getElementById("inputValues").value;
     //let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
-    
+    let error = false;
     let tokens = elementos.split (" ");
     let j;
 	for (j = 0; j < tokens.length; j++){
-		numeros.push(parseInt(tokens[j]));
-		colores.push(colorneutro);
+		if (!(isNaN(parseInt(tokens[j])))) {
+			numeros.push(parseInt(tokens[j]));
+			colores.push(colorneutro);	
+		}
+		else {
+			elementos = [];
+			numeros = [];
+			colores = [];
+			document.getElementById("inputValues").value = "";
+			alert ("Pon números separados por un espacio en blanco, por favor");
+			error = true;
+			break;
+		}
+		
 	}
-
-	//fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
-	animar = true; // Animar 
-	noLoop(); // Animar solo una vez
-	animar = false;
-	kadane ();
+	if (!error){
+		//fieldNameElement.innerHTML = numeros [0]; // prueba, se elimina despues
+		animar = true; // Animar 
+		noLoop(); // Animar solo una vez
+		animar = false;
+		kadane ();
+	}
 }
 
 
