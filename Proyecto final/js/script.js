@@ -36,7 +36,7 @@ function draw() // Se ejecuta infinitamente a menos que se use NoLoop ()
 { 
 	if (animar){
 		console.log("en draw");
-		drawArray (numeros, 10, 10, 70);
+		drawArray (numeros, 10, 10, 75);
 		drawResults (10, 10, 50);
 		animar = false;
 	} 
@@ -45,14 +45,14 @@ function draw() // Se ejecuta infinitamente a menos que se use NoLoop ()
 function drawArray (arr, x, y, size){ // Funcion para dibujar el arreglo x y y posicines iniciales, size tamaño del cuadro
 	let i;
 	let posx;
-	textSize (size/2);
+	textSize (size/3);
 	stroke ('black');
 	for (i = 0; i < arr.length; i++){
 		posx = x + size * i; 
 		fill (colores[i]); // Llenar el cuadro de acuerdo a su color correspondiente
 		rect (posx, y, size, size);
 		fill ('black'); // Escribir numero en negro
-		text (numeros[i], posx-20 + (size/2), y + (size/2) + (size/10)); // Se escribe numero aprox. en el centro del cuadro
+		text (numeros[i], posx + 3, y + (size/2) + (size/10)); // Se escribe numero aprox. en el centro del cuadro
 	}
 }
 
