@@ -1,0 +1,33 @@
+.contenedor-codigo {
+    position: relative;
+    width: 500px;
+    height: 500;
+}
+
+.lenguaje {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid;
+    position: relative;
+    color: darkgoldenrod;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.codigo {
+    position: absolute;
+    border: 2px solid;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.p-activa {
+    visibility: visible;
+    opacity: 1;
+}
+
+.c-activa {
+    border-bottom-color: white;
+}
