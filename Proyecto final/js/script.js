@@ -4,6 +4,7 @@ var colorleido = 'blue'; // color de numero en variable aux
 var colorneutro = 'white'; // color sin leer
 var colorres = 'red'; // color del resultados
 var animar = false; // bandera para animar solo cuando se presione el boton
+var bandera = false;
 
 var max_so_far = Number.MIN_SAFE_INTEGER; // Variables Kadane
 	var max_ending_here = 0;
@@ -89,11 +90,20 @@ async function kadane () {
     { 
         max_ending_here = max_ending_here + numeros[i];
         colores[i] = colorleido;
+        if(i)
+        {
+        paso4.innerHTML='¿Es Máximo general < Máximo en la posición actual?';	
+        }
         
+        var paso5=document.getElementById("paso5");
         if (max_so_far < max_ending_here) 
-        { 
-            max_so_far = max_ending_here;
-
+        {
+        	if(i)
+        	{
+        		paso5.innerHTML='Sí se actualiza el máximo general a: '+max_ending_here;
+        	}
+        	
+           	max_so_far = max_ending_here;
             let j;
             for (j = start; j <= end; j++){
             	colores [j] = colorleido;
@@ -105,7 +115,10 @@ async function kadane () {
             for (j = start; j <= end; j++){
             	colores [j] = colorres;
             }
-        } 
+        }else
+        {
+        	paso5.innerHTML='No';
+        }
         if (max_ending_here < 0) 
         { 
             max_ending_here = 0; 
@@ -115,6 +128,8 @@ async function kadane () {
         console.log("en for");
         await sleep(2000);
         animar = true;
+
+        paso1.innerHTML='Posición '+(i + 1);
         setup();
         redraw();
     } 
