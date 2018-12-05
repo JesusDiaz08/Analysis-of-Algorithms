@@ -76,33 +76,30 @@ function drawResults (x, y, size){ // x y y son referencia del arreglo para no d
 	textSize (size/2);
 	fill (colorres);
 	stroke (colorres);
-	text ("Maximo general: " + max_so_far, x, y + 2 * size);
+	//text ("Maximo general: " + max_so_far, x, y + 2 * size);
 	fill (colorleido);
 	stroke (colorleido);
-	text ("Maximo hasta ahora: " + max_ending_here, x, y + 4 * size);
+	//text ("Maximo hasta ahora: " + max_ending_here, x, y + 4 * size);
 	fill ('black');	
 }
 
 async function kadane () {
 	let i;
-	let start = 0, end = 0, s = 0;
+	let start = 0, end = 0, s = 0, bandera;
 	for (i = 0; i < numeros.length; i++) 
     { 
         max_ending_here = max_ending_here + numeros[i];
         colores[i] = colorleido;
         if(i)
         {
-        paso4.innerHTML='¿Es Máximo general < Máximo en la posición actual?';	
+        	paso4.innerHTML='Máximo general: '+max_so_far;		
+        	paso2.innerHTML='¿Es Máximo general < Máximo en la posición actual?';		
         }
-        
-        var paso5=document.getElementById("paso5");
+             
+           
         if (max_so_far < max_ending_here) 
         {
-        	if(i)
-        	{
-        		paso5.innerHTML='Sí se actualiza el máximo general a: '+max_ending_here;
-        	}
-        	
+       		bandera = true;
            	max_so_far = max_ending_here;
             let j;
             for (j = start; j <= end; j++){
@@ -115,10 +112,10 @@ async function kadane () {
             for (j = start; j <= end; j++){
             	colores [j] = colorres;
             }
-        }else
-        {
-        	paso5.innerHTML='No';
         }
+
+        await sleep(4000);
+    
         if (max_ending_here < 0) 
         { 
             max_ending_here = 0; 
@@ -128,11 +125,30 @@ async function kadane () {
         console.log("en for");
         await sleep(2000);
         animar = true;
+        
+        setup();
+        if(bandera)
+    	{
+    		paso3.innerHTML='Sí, entonces se actualiza el máximo general a  '+max_so_far;
+    		bandera = false;
+    	}
+        else
+        {
+        	paso3.innerHTML='No, se mantiene el Máximo general';
+        }
+        
 
         paso1.innerHTML='Posición '+(i + 1);
-        setup();
+        paso5.innerHTML='Máximo en la posición actual: '+max_ending_here;		
         redraw();
     } 
+    await sleep(2000);
+    paso4.innerHTML='Suma máxima subarreglo contiguo: '+max_so_far ;
+    paso1.innerHTML = "";
+    paso2.innerHTML = "";
+    paso3.innerHTML = "";
+    paso5.innerHTML = "";
+
     //let fieldNameElement = document.getElementById("res");
     //fieldNameElement.innerHTML = max_so_far; // prueba funcionamiento
     numeros = [];
