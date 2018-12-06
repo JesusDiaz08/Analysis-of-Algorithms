@@ -10,6 +10,10 @@ var max_so_far = Number.MIN_SAFE_INTEGER; // Variables Kadane
 	var max_ending_here = 0;
 
 function showEntrada() { // Funcion que se llama al principio de animar
+    numeros = [];
+	colores = [];
+	max_so_far = Number.MIN_SAFE_INTEGER;
+	max_ending_here = 0;
     let elementos = document.getElementById("inputValues").value;
     //let fieldNameElement = document.getElementById("res"); // prueba, se elimina despues
     let error = false;
@@ -114,7 +118,7 @@ async function kadane () {
             }
         }
 
-        await sleep(4000);
+        //await sleep(4000);
     
         if (max_ending_here < 0) 
         { 
@@ -142,7 +146,7 @@ async function kadane () {
         paso5.innerHTML='Máximo en la posición actual: '+max_ending_here;		
         redraw();
     } 
-    await sleep(2000);
+    await sleep(4000);
     paso4.innerHTML='Suma máxima subarreglo contiguo: '+max_so_far ;
     paso1.innerHTML = "";
     paso2.innerHTML = "";
